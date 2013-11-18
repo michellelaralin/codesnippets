@@ -1,0 +1,15 @@
+
+
+= link_to "+ New Snippet", new_snippet_path, class: 'new-snippet-link'
+-@snippets.reverse.each do |snippet|
+  .snippet
+    %p
+      = snippet.description
+    %pre.prettyprint= snippet.code
+    .text-right
+      %small
+        Posted by
+        = snippet.user.email
+        &middot;
+        - if signed_in? && snippet.user == current_user
+          = link_to "Delete", snippet, method: :delete

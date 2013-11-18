@@ -1,0 +1,9 @@
+= form_for @snippet do |f|
+  %p
+    = f.label :description
+    = f.text_field :description, class: 'form-control'
+  %p
+    = f.label :code
+    = f.text_area :code, class: 'form-control'
+  %p
+    = f.submit "Submit", class: 'btn btn-default'

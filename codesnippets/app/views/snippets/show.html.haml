@@ -1,0 +1,11 @@
+%h1 Snippet
+
+%p
+  = @snippet.description
+%code
+  = @snippet.code
+%p
+  = @snippet.user.id
+
+- if signed_in? && @snippet.user == current_user
+  = link_to "Delete", @snippet, method: :delete
